@@ -1,3 +1,13 @@
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+../Build/
+
+# JetBrains Rider / ReSharper
+.idea/
+*.sln.DotSettings.user
+
 # Visual Studio 2015 user specific files
 .vs/
 
@@ -35,13 +45,11 @@
 *.xcodeproj
 *.xcworkspace
 *.sln
-*.slnx
 *.suo
 *.opensdf
 *.sdf
 *.VC.db
 *.VC.opendb
-.vsconfig
 
 # Precompiled Assets
 SourceArt/**/*.png
