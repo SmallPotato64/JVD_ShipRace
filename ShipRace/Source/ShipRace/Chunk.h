@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Components/ArrowComponent.h"
 #include "GameFramework/Actor.h"
 #include "Chunk.generated.h"
 
@@ -23,4 +24,12 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Custom|Components")
+	USceneComponent* SceneRoot;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Custom|Components")
+	UArrowComponent* StartPoint;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Custom|Components")
+	UArrowComponent* EndPoint;
 };

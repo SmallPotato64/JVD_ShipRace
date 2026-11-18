@@ -7,7 +7,16 @@
 AChunk::AChunk()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
+	PrimaryActorTick.bCanEverTick = false;
+	
+	SceneRoot = CreateDefaultSubobject<USceneComponent>(TEXT("SceneRoot"));
+	RootComponent = SceneRoot;
+	
+	StartPoint = CreateDefaultSubobject<UArrowComponent>(TEXT("StartPoint"));
+	StartPoint->SetupAttachment(RootComponent);
+	
+	EndPoint = CreateDefaultSubobject<UArrowComponent>(TEXT("EndPoint"));
+	EndPoint->SetupAttachment(RootComponent);
 
 }
 
