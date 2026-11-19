@@ -32,4 +32,7 @@ public:
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Custom|Components")
 	UArrowComponent* EndPoint;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Custom|Chunk Editing")
+	int32 InstanceIndexToDelete = -1;
 };

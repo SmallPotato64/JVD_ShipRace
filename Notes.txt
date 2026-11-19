@@ -1,0 +1,8 @@
+room mesh instancing:
+	Quand j'ai importé mes pièces de mon niveau vers un blueprint, l'editor laggais donc je me suis demandé si c'était une mauvaise pratique de mettre des centaines de static mesh dans un BP.
+	J'ai trouvé le mesh instancing.
+	ISM (Instanced Static Mesh):
+		Tout les meshs sont load en meme tempts et ils ont le meme LOD
+	HISM (Hierarchical Instanced Static Mesh)
+		Les mesh non visibles par le joueur peuvent ne pas être loadé et peuvent avoir un LOD diff
+	Pour les besoin du jeu, j'ai choisit ISM car moi couteu et plus simple
