@@ -6,6 +6,8 @@
 #include "GameFramework/Actor.h"
 #include "LevelGenerator.generated.h"
 
+class AChunk;
+
 UCLASS()
 class SHIPRACE_API ALevelGenerator : public AActor
 {
@@ -23,6 +25,21 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	UFUNCTION(BlueprintCallable)
+	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category = "Custom|Generation")
+	AChunk* StartChunk;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Custom|Generation")
+	TArray<TSubclassOf<AChunk>> NormalChunkClasses;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Custom|Generation")
+	TSubclassOf<AChunk> EndChunkClass;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Custom|Generation", meta = (ClampMin = "0"))
+	int32 NumberOfNormalChunks = 2;
+	
+	UFUNCTION(BlueprintCallable, Category = "Custom|Generation")
 	void GenerateLevel();
+	
+private:
+	AChunk* SpawnAndAlignChunk(TSubclassOf<AChunk> ChunkClass, const FTransform& TargetTransform);
 };

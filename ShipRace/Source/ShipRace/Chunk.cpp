@@ -34,3 +34,8 @@ void AChunk::Tick(float DeltaTime)
 
 }
 
+FTransform AChunk::GetEndTransform() const
+{
+	return EndPoint->GetComponentTransform();
+}
+
